@@ -1,0 +1,349 @@
+:root {
+  --text-base: hsl(218, 13%, 72%);
+  --text-title: hsl(44, 26%, 77%);
+  --background: hsl(40, 6%, 9%);
+  --form-background: hsl(36, 7%, 13%);
+  --primary-color: hsl(43, 100%, 60%);
+  --remind-color: hsl(217, 10%, 69%);
+  --box-shadow-color: hsl(43, 100%, 77%);
+  --input-without-active: hsl(0, 0%, 53%);
+  --button-text-color: hsl(43, 89%, 15%);
+
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+* {
+  text-decoration: none;
+  border: none;
+
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li,
+p,
+dd,
+dt,
+dl {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 4rem calc(7.4rem - 4rem) 11.9rem 33.5rem 11.9rem 7.4rem 1fr;
+  max-width: 144rem;
+
+  background: var(--background);
+}
+
+nav {
+  grid-column: 2/4;
+  padding-top: 4rem;
+  padding-bottom: 12.6rem;
+}
+
+.info {
+  grid-column: 3/6;
+  box-sizing: border-box;
+}
+
+.img {
+  grid-column: 8/9;
+  box-sizing: border-box;
+}
+
+.info .login {
+  grid-column: 3/6;
+  background: var(--form-background);
+  width: 57.2rem;
+  height: 51.2rem;
+
+  display: grid;
+  grid-template-columns: 11.9rem 33.5rem 11.9rem;
+  grid-template-rows: 5.5rem 6.4rem 2.7rem 7.3rem 2rem 7.3rem 2rem 2rem 2rem 5.1rem 1.4rem 2.1rem 5.4rem;
+}
+.info .login .img-login {
+  padding-right: 1rem;
+}
+
+.info .login div:nth-child(1) {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+.info .login div:nth-child(1) div:nth-child(1) {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.info .login h1 {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 2.4rem;
+  line-height: 3.6rem;
+
+  color: var(--text-title);
+}
+
+.info .login h2 {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+
+  color: var(--text-base);
+  white-space: nowrap;
+}
+
+.info .login .e-mail {
+  grid-column: 2/3;
+  grid-row: 4/5;
+}
+
+.info .login .e-mail p,
+.info .login .password p {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+
+  color: var(--text-base);
+
+  margin-bottom: 0.5rem;
+}
+
+.info .login .e-mail div,
+.info .login .password div {
+  display: flex;
+  align-items: center;
+
+  height: 4.4rem;
+
+  border: 1px solid var(--input-without-active);
+  border-radius: 4px;
+}
+
+.info .login .e-mail div img,
+.info .login .password div img {
+  padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+}
+
+.info .login .e-mail div input,
+.info .login .password div input {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+
+  width: 27rem;
+  height: 2rem;
+
+  color: var(--remind-color);
+
+  background: none;
+}
+
+.info .login .password {
+  grid-column: 2/3;
+  grid-row: 6/7;
+}
+
+.info .login .password img:nth-child(3):hover {
+  cursor: pointer;
+}
+
+.info .login .checkbox {
+  grid-column: 2/3;
+  grid-row: 8/9;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info .login .checkbox div {
+  display: flex;
+  align-items: center;
+}
+
+.info .login .checkbox div label {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+
+  color: var(--remind-color);
+}
+
+.info .login .checkbox p {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+
+  color: var(--primary-color);
+}
+
+.info .login .checkbox p:hover {
+  cursor: pointer;
+}
+
+.info .login .button-enter {
+  grid-column: 2/3;
+  grid-row: 10/11;
+
+  background: var(--primary-color);
+  border-radius: 4px;
+
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 2.7rem;
+
+  letter-spacing: 0.015em;
+  text-transform: uppercase;
+
+  color: var(--button-text-color);
+}
+
+.info .login .button-enter:hover {
+  cursor: pointer;
+}
+
+.info .login .footer {
+  grid-column: 2/3;
+  grid-row: 12/13;
+
+  display: flex;
+  justify-content: space-around;
+}
+
+footer {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+
+  color: var(--primary-color);
+}
+
+.footer strong {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+  /* identical to box height */
+
+  color: var(--primary-color);
+}
+
+.img {
+  grid-column: 8/9;
+  max-width: 72rem;
+  max-height: 90rem;
+}
+/*=============================HOVER AND JS========================================*/
+.info .login .e-mail,
+.info .login .password {
+  display: none;
+}
+
+.info .login .emailAtivo,
+.info .login .passwordAtivo {
+  display: inherit;
+}
+
+.info .login .emailFocus,
+.info .login .passwordFocus {
+  display: none;  
+}
+
+.info .login .emailFocusAtivo,
+.info .login .passwordFocusAtivo {
+  display: inherit;  
+}
+
+.info .login .emailFocus {
+  grid-column: 2/3;
+  grid-row: 4/5;
+}
+
+.info .login .emailFocus p,
+.info .login .passwordFocus p {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+
+  color: var(--text-base);
+
+  margin-bottom: 0.5rem;
+}
+
+.info .login .emailFocus div,
+.info .login .passwordFocus div {
+  display: flex;
+  align-items: center;
+
+  height: 4.4rem;
+
+  border: 1px solid var(--input-without-active);
+  border-radius: 4px;
+}
+
+.info .login .emailFocus div img,
+.info .login .passwordFocus div img {
+  padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+}
+
+.info .login .emailFocus div input,
+.info .login .passwordFocus div input {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+
+  width: 27rem;
+  height: 2rem;
+
+  color: var(--remind-color);
+
+  background: none;
+}
+
+.info .login .passwordFocus {
+  grid-column: 2/3;
+  grid-row: 6/7;
+}
+
+.info .login .emailFocus div:hover,
+.info .login .passwordFocus div:hover {
+  display: flex;
+  align-items: center;
+
+  height: 4.4rem;
+
+  border: 1px solid var(--primary-color);
+  box-shadow: 0px 0px 0px 2px var(--box-shadow-color);
+  border-radius: 4px;
+}
