@@ -253,6 +253,8 @@ footer {
   /* identical to box height */
 
   color: var(--primary-color);
+
+  cursor: pointer;
 }
 
 .img {
@@ -261,24 +263,29 @@ footer {
   max-height: 90rem;
 }
 /*=============================HOVER AND JS========================================*/
-.info .login .e-mail,
-.info .login .password {
+.info .login .emailFocus,
+.info .login .passwordFocus {
   display: none;
 }
 
-.info .login .emailAtivo,
-.info .login .passwordAtivo {
-  display: inherit;
+.e-mail .emailHidden,
+.e-mail .emailHidden label,
+.e-mail .emailHidden img,
+.email .emailHidden input {
+  display: none;
 }
 
-.info .login .emailFocus,
-.info .login .passwordFocus {
-  display: none;  
+.password .passwordHidden,
+.password .passwordHidden label,
+.password .passwordHidden img,
+.password .passwordHidden input {
+  display: none;
 }
 
 .info .login .emailFocusAtivo,
 .info .login .passwordFocusAtivo {
-  display: inherit;  
+  display: inherit;
+  margin-bottom: 1px;
 }
 
 .info .login .emailFocus {
@@ -303,10 +310,9 @@ footer {
 .info .login .passwordFocus div {
   display: flex;
   align-items: center;
-
   height: 4.4rem;
 
-  border: 1px solid var(--input-without-active);
+  border: 0.1rem solid var(--input-without-active);
   border-radius: 4px;
 }
 
@@ -343,7 +349,6 @@ footer {
 
   height: 4.4rem;
 
-  border: 1px solid var(--primary-color);
-  box-shadow: 0px 0px 0px 2px var(--box-shadow-color);
-  border-radius: 4px;
+  border: 0.1rem solid var(--primary-color);
+  border-radius: 0.4rem;
 }
