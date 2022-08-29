@@ -231,16 +231,6 @@ body {
   color: var(--remind-color);
 }
 
-.formLogin .password .activedPassword {
-  max-width: 33.5rem;
-  height: 4.4rem;
-  border: 1px solid var(--input-without-active);
-  border-radius: 4px;
-  background-color: var(--form-background);
-  padding-left: 1.2rem;
-  padding-right: 1.2rem;
-}
-
 .formLogin .password .activedPassword::placeholder {
   font-family: 'Roboto';
   font-style: normal;
@@ -287,6 +277,7 @@ body {
 }
 
 .formLogin .checkbox p {
+  cursor: pointer;
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 600;
@@ -386,6 +377,7 @@ input[type='checkbox']:checked:after {
 }
 
 .formLogin .anyAccount span {
+  cursor: pointer;
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 600;
