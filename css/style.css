@@ -15,8 +15,8 @@
 * {
   text-decoration: none;
   border: none;
-
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 body,
@@ -37,175 +37,293 @@ dl {
 }
 
 body {
-  display: grid;
-  grid-template-columns: 4rem calc(7.4rem - 4rem) 11.9rem 33.5rem 11.9rem 7.4rem 1fr;
-  max-width: 144rem;
-
   background: var(--background);
 }
 
-nav {
-  grid-column: 2/4;
-  padding-top: 4rem;
-  padding-bottom: 12.6rem;
-}
-
-.info {
-  grid-column: 3/6;
-  box-sizing: border-box;
-}
-
-.img {
-  grid-column: 8/9;
-  box-sizing: border-box;
-}
-
-.info .login {
-  grid-column: 3/6;
-  background: var(--form-background);
-  width: 57.2rem;
-  height: 51.2rem;
-
+.container {
   display: grid;
-  grid-template-columns: 11.9rem 33.5rem 11.9rem;
-  grid-template-rows: 5.5rem 6.4rem 2.7rem 7.3rem 2rem 7.3rem 2rem 2rem 2rem 5.1rem 1.4rem 2.1rem 5.4rem;
-}
-.info .login .img-login {
-  padding-right: 1rem;
+  grid-template-columns: 50% 50%;
+  max-width: 144rem;
 }
 
-.info .login div:nth-child(1) {
-  grid-column: 2/3;
-  grid-row: 2/3;
+.formLogin {
+  padding: 4rem 7.4rem 19.4rem 4rem;
 }
 
-.info .login div:nth-child(1) div:nth-child(1) {
+.formLogin .logo {
+  margin-bottom: 12.6rem;
+}
+
+.formLogin .form {
+  background: var(--form-background);
+  padding: 5.5rem 11.9rem;
+  max-width: 57.2rem;
+}
+
+.formLogin .loginDescription {
+  margin-bottom: 2.7rem;
+}
+
+.formLogin .loginDescription div {
   display: flex;
+  gap: 1rem;
   align-items: center;
-  white-space: nowrap;
 }
 
-.info .login h1 {
+.formLogin .loginDescription div h1 {
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 600;
   font-size: 2.4rem;
   line-height: 3.6rem;
+  /* identical to box height */
 
   color: var(--text-title);
+
+  margin-top: 0.5rem;
 }
 
-.info .login h2 {
+.formLogin .loginDescription p {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 500;
   font-size: 1.6rem;
   line-height: 2.4rem;
+  /* or 150% */
 
   color: var(--text-base);
-  white-space: nowrap;
 }
 
-.info .login .e-mail {
-  grid-column: 2/3;
-  grid-row: 4/5;
+.formLogin .email,
+.formLogin .password {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
 }
 
-.info .login .e-mail p,
-.info .login .password p {
+.formLogin .email label,
+.formLogin .password label {
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  /* identical to box height */
 
   color: var(--text-base);
-
-  margin-bottom: 0.5rem;
 }
 
-.info .login .e-mail div,
-.info .login .password div {
-  display: flex;
-  align-items: center;
-
+.formLogin .email input,
+.formLogin .password input {
+  max-width: 33.5rem;
   height: 4.4rem;
-
   border: 1px solid var(--input-without-active);
   border-radius: 4px;
+  background-color: var(--form-background);
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
 }
 
-.info .login .e-mail div img,
-.info .login .password div img {
-  padding: 1.2rem 0.5rem 1.2rem 0.5rem;
-}
-
-.info .login .e-mail div input,
-.info .login .password div input {
+.formLogin .email input::placeholder {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
   font-size: 1.4rem;
   line-height: 1.6rem;
 
-  width: 27rem;
-  height: 2rem;
+  color: var(--remind-color);
+
+  background: url('../assets/mail.svg') left center no-repeat;
+  padding-left: 2.5rem;
+}
+
+.formLogin .password input::placeholder {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
 
   color: var(--remind-color);
 
-  background: none;
+  background: url('../assets/mail.svg') left center no-repeat,
+    url('../assets/eye.svg') right center no-repeat;
+  padding-left: 2.5rem;
 }
 
-.info .login .password {
-  grid-column: 2/3;
-  grid-row: 6/7;
+/*======================FOCUS/BLUR - EMAIL/PASSWORD=============================*/
+.formLogin .email .activeEmail {
+  position: relative;
+  outline: none;
+  border: 1px solid var(--primary-color);
+  box-shadow: 0px 0px 0px 2px var(--box-shadow-color);
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+
+  color: var(--remind-color);
 }
 
-.info .login .password img:nth-child(3):hover {
-  cursor: pointer;
+.formLogin .email .activeEmail {
+  max-width: 33.5rem;
+  height: 4.4rem;
+  border-radius: 4px;
+  background-color: var(--form-background);
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
 }
 
-.info .login .checkbox {
-  grid-column: 2/3;
-  grid-row: 8/9;
+.formLogin .email .activeEmail::placeholder {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
 
+  color: var(--remind-color);
+
+  background: url('../assets/mail-focus.svg') left center no-repeat;
+  padding-left: 2.5rem;
+}
+
+.formLogin .password .activedPassword {
+  position: relative;
+  outline: none;
+  border: 1px solid var(--primary-color);
+  box-shadow: 0px 0px 0px 2px var(--box-shadow-color);
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+
+  color: var(--remind-color);
+}
+
+.formLogin .password .activedPassword {
+  max-width: 33.5rem;
+  height: 4.4rem;
+  border: 1px solid var(--input-without-active);
+  border-radius: 4px;
+  background-color: var(--form-background);
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+}
+
+.formLogin .password .activedPassword::placeholder {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+
+  color: var(--remind-color);
+
+  background: url('../assets/mail-focus.svg') left center no-repeat;
+  padding-left: 2.5rem;
+  z-index: 10;
+}
+
+/*==================PASSWORD EYE=============================================*/
+.formLogin .password {
+  position: relative;
+}
+
+.formLogin .password .showPassword {
+  position: absolute;
+  right: 1.3rem;
+  top: 3.6rem;
+}
+/*===========================================================================*/
+
+.formLogin .checkbox {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 2rem;
+  max-width: 33.4rem;
 }
 
-.info .login .checkbox div {
-  display: flex;
-  align-items: center;
-}
-
-.info .login .checkbox div label {
+.formLogin .checkbox div label {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.9rem;
+  /* identical to box height */
 
   color: var(--remind-color);
 }
 
-.info .login .checkbox p {
+.formLogin .checkbox p {
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 600;
   font-size: 1.4rem;
   line-height: 2.1rem;
+  /* identical to box height */
+
+  white-space: nowrap;
 
   color: var(--primary-color);
 }
 
-.info .login .checkbox p:hover {
+/*=========================CHECKBOX EDIT======================================*/
+input[type='checkbox'] {
+  position: relative;
   cursor: pointer;
+  width: 2rem;
+  height: 2rem;
 }
 
-.info .login .button-enter {
-  grid-column: 2/3;
-  grid-row: 10/11;
+input[type='checkbox']:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 1.8rem;
+  height: 1.7rem;
+  top: 0;
+  left: 0;
+  background-color: var(--form-background);
+  border: 1px solid #868686;
+  border-radius: 4px;
+}
+
+input[type='checkbox']:checked:before {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  top: 0;
+  left: 0;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 4px;
+}
+
+input[type='checkbox']:checked:after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0.5rem;
+  height: 1rem;
+  border: solid var(--button-text-color);
+  border-width: 0 0.3rem 0.3rem 0;
+
+  transform: rotate(45deg);
+
+  top: 0.1rem;
+  left: 0.7rem;
+}
+/*==========================================================================*/
+
+.formLogin button {
+  width: 33.5rem;
+  height: 5.1rem;
+  cursor: pointer;
 
   background: var(--primary-color);
   border-radius: 4px;
@@ -215,36 +333,31 @@ nav {
   font-weight: 600;
   font-size: 1.8rem;
   line-height: 2.7rem;
+  /* identical to box height */
 
   letter-spacing: 0.015em;
   text-transform: uppercase;
 
   color: var(--button-text-color);
+
+  margin-bottom: 1.4rem;
 }
 
-.info .login .button-enter:hover {
-  cursor: pointer;
-}
-
-.info .login .footer {
-  grid-column: 2/3;
-  grid-row: 12/13;
-
-  display: flex;
-  justify-content: space-around;
-}
-
-footer {
+.formLogin .anyAccount {
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 400;
   font-size: 1.4rem;
   line-height: 2.1rem;
+  /* identical to box height */
+
+  white-space: nowrap;
 
   color: var(--primary-color);
+  margin-left: 4.9rem;
 }
 
-.footer strong {
+.formLogin .anyAccount span {
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 600;
@@ -253,102 +366,15 @@ footer {
   /* identical to box height */
 
   color: var(--primary-color);
-
-  cursor: pointer;
 }
 
-.img {
-  grid-column: 8/9;
-  max-width: 72rem;
-  max-height: 90rem;
-}
-/*=============================HOVER AND JS========================================*/
-.info .login .emailFocus,
-.info .login .passwordFocus {
-  display: none;
+.imgCar img {
+  width: 72rem;
+  height: 90rem;
 }
 
-.e-mail .emailHidden,
-.e-mail .emailHidden label,
-.e-mail .emailHidden img,
-.email .emailHidden input {
-  display: none;
-}
-
-.password .passwordHidden,
-.password .passwordHidden label,
-.password .passwordHidden img,
-.password .passwordHidden input {
-  display: none;
-}
-
-.info .login .emailFocusAtivo,
-.info .login .passwordFocusAtivo {
-  display: inherit;
-  margin-bottom: 1px;
-}
-
-.info .login .emailFocus {
-  grid-column: 2/3;
-  grid-row: 4/5;
-}
-
-.info .login .emailFocus p,
-.info .login .passwordFocus p {
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-
-  color: var(--text-base);
-
-  margin-bottom: 0.5rem;
-}
-
-.info .login .emailFocus div,
-.info .login .passwordFocus div {
+.formLogin .checkbox div {
   display: flex;
+  gap: 0.5rem;
   align-items: center;
-  height: 4.4rem;
-
-  border: 0.1rem solid var(--input-without-active);
-  border-radius: 4px;
-}
-
-.info .login .emailFocus div img,
-.info .login .passwordFocus div img {
-  padding: 1.2rem 0.5rem 1.2rem 0.5rem;
-}
-
-.info .login .emailFocus div input,
-.info .login .passwordFocus div input {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 1.4rem;
-  line-height: 1.6rem;
-
-  width: 27rem;
-  height: 2rem;
-
-  color: var(--remind-color);
-
-  background: none;
-}
-
-.info .login .passwordFocus {
-  grid-column: 2/3;
-  grid-row: 6/7;
-}
-
-.info .login .emailFocus div:hover,
-.info .login .passwordFocus div:hover {
-  display: flex;
-  align-items: center;
-
-  height: 4.4rem;
-
-  border: 0.1rem solid var(--primary-color);
-  border-radius: 0.4rem;
 }
