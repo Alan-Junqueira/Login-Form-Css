@@ -19,50 +19,51 @@
         <div class="logo">
           <img src="./assets/logo.svg" alt="" />
         </div>
-        <div class="form">
-          <div class="loginDescription">
-            <div>
-              <img src="./assets/log-in.svg" class="img-login" alt="" />
-              <h1>Faça seu login</h1>
+        <div class="formContainer">
+          <div class="form">
+            <div class="loginDescription">
+              <div>
+                <img src="./assets/log-in.svg" class="img-login" alt="" />
+                <h1>Faça seu login</h1>
+              </div>
+              <p>Entre com suas informações de cadastro</p>
             </div>
-            <p>Entre com suas informações de cadastro</p>
+  
+            <div class="email">
+              <label for="email" name="email"> E-mail </label>
+              <input
+                type="email"
+                id="email"
+                placeholder="Digite seu e-mail"
+                name="email"
+              />
+            </div>
+  
+            <div class="password">
+              <label for="password" name="labelPassword">Senha</label>
+              <input
+                type="password"
+                id="password"
+                placeholder="Digite sua senha"
+                name="password"
+              />
+            </div>
+            <div class="checkbox">
+              <div>
+                <input type="checkbox" id="rememberMe" name="checkbox" />
+                <label for="rememberMe">Lembre-me</label>
+              </div>
+              <p>Esqueci minha senha</p>
+            </div>
+            
+            <button class="buttonGetIn">ENTRAR</button>
+            <p class="anyAccount">
+              Não tem uma conta? <span class="register">Registre-se</span>
+            </p>
           </div>
 
-          <div class="email">
-            <label for="email" name="email"> E-mail </label>
-            <input
-              type="email"
-              id="email"
-              placeholder="Digite seu e-mail"
-              name="email"
-            />
-          </div>
-
-          <div class="password">
-            <label for="password" name="labelPassword">Senha</label>
-            <input
-              type="password"
-              id="password"
-              placeholder="Digite sua senha"
-              name="password"
-            />
-            <div class="showPassword">
-              <img src="./assets/eye.svg" alt="">
-            </div>
-          </div>
-          <div class="checkbox">
-            <div>
-              <input type="checkbox" id="rememberMe" name="checkbox" />
-              <label for="rememberMe">Lembre-me</label>
-            </div>
-            <p>Esqueci minha senha</p>
-          </div>
-
-          <button class="buttonGetIn">ENTRAR</button>
-          <p class="anyAccount">
-            Não tem uma conta? <span class="register">Registre-se</span>
-          </p>
         </div>
+
       </section>
       <section class="imgCar">
         <img src="./assets/side-image.jpg" alt="" />

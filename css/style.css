@@ -41,22 +41,50 @@ body {
 }
 
 .container {
-  display: grid;
-  grid-template-columns: 50% 50%;
+  display: flex;
+  justify-content: space-between;
   max-width: 144rem;
+}
+
+@media (max-width: 375px) {
+  .container {
+    max-width: 37.5rem;
+  }
 }
 
 .formLogin {
   padding: 4rem 7.4rem 19.4rem 4rem;
 }
 
+@media (max-width: 375px) {
+  .formLogin {
+    padding: 4rem 2rem 31rem;
+  }
+}
+
 .formLogin .logo {
   margin-bottom: 12.6rem;
 }
 
-.formLogin .form {
-  background: var(--form-background);
+@media (max-width: 375px) {
+  .formLogin .logo {
+    margin-bottom: 3rem;
+  }
+}
+
+.formLogin .formContainer {
   padding: 5.5rem 11.9rem;
+  background: var(--form-background);
+}
+
+@media (max-width: 375px) {
+  .formLogin .formContainer {
+    padding: 0;
+    background: none;
+  }
+}
+
+.formLogin .form {
   max-width: 57.2rem;
 }
 
@@ -146,7 +174,7 @@ body {
 
   color: var(--remind-color);
 
-  background: url('../assets/mail.svg') left center no-repeat,
+  background: url('../assets/lock.svg') left center no-repeat,
     url('../assets/eye.svg') right center no-repeat;
   padding-left: 2.5rem;
 }
@@ -154,6 +182,7 @@ body {
 /*======================FOCUS/BLUR - EMAIL/PASSWORD=============================*/
 .formLogin .email .activeEmail {
   position: relative;
+
   outline: none;
   border: 1px solid var(--primary-color);
   box-shadow: 0px 0px 0px 2px var(--box-shadow-color);
@@ -221,7 +250,7 @@ body {
 
   color: var(--remind-color);
 
-  background: url('../assets/mail-focus.svg') left center no-repeat;
+  background: url('../assets/lock-focus.svg') left center no-repeat;
   padding-left: 2.5rem;
   z-index: 10;
 }
@@ -319,9 +348,8 @@ input[type='checkbox']:checked:after {
   left: 0.7rem;
 }
 /*==========================================================================*/
-
 .formLogin button {
-  width: 33.5rem;
+  min-width: 33.4rem;
   height: 5.1rem;
   cursor: pointer;
 
@@ -373,8 +401,16 @@ input[type='checkbox']:checked:after {
   height: 90rem;
 }
 
+@media (max-width: 375px) {
+  .imgCar img {
+    display: none;
+  }
+}
+
 .formLogin .checkbox div {
   display: flex;
   gap: 0.5rem;
   align-items: center;
 }
+
+/*==========================RESPONSIVE WIDTH 375===============================*/
