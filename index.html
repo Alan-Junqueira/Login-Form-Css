@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login From Css</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./css/style.css" />
-  </head>
-  <body>
-    <div class="container">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login From Css</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="content">
+      <div class="logo">
+        <img src="./assets/logo.svg" alt="" />
+      </div>
       <section class="formLogin">
-        <div class="logo">
-          <img src="./assets/logo.svg" alt="" />
-        </div>
         <div class="formContainer">
           <div class="form">
             <div class="loginDescription">
@@ -28,25 +29,15 @@
               </div>
               <p>Entre com suas informações de cadastro</p>
             </div>
-  
+
             <div class="email">
               <label for="email" name="email"> E-mail </label>
-              <input
-                type="email"
-                id="email"
-                placeholder="Digite seu e-mail"
-                name="email"
-              />
+              <input type="email" id="email" placeholder="Digite seu e-mail" name="email" />
             </div>
-  
+
             <div class="password">
               <label for="password" name="labelPassword">Senha</label>
-              <input
-                type="password"
-                id="password"
-                placeholder="Digite sua senha"
-                name="password"
-              />
+              <input type="password" id="password" placeholder="Digite sua senha" name="password" />
               <div class="showPassword">
                 <img src="./assets/eye.svg" alt="">
               </div>
@@ -58,7 +49,7 @@
               </div>
               <p>Esqueci minha senha</p>
             </div>
-            
+
             <button class="buttonGetIn">ENTRAR</button>
             <p class="anyAccount">
               Não tem uma conta? <span class="register">Registre-se</span>
@@ -66,12 +57,13 @@
           </div>
 
         </div>
-
       </section>
       <section class="imgCar">
         <img src="./assets/side-image.jpg" alt="" />
       </section>
     </div>
-    <script src="./script.js"></script>
-  </body>
+  </div>
+  <script src="./script.js"></script>
+</body>
+
 </html>

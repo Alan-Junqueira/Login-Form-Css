@@ -42,34 +42,34 @@ body {
 
 .container {
   display: flex;
-  justify-content: space-between;
-  max-width: 144rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-@media (max-width: 375px) {
-  .container {
-    max-width: 37.5rem;
-  }
+.content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  padding-left: 74px;
+}
+
+div.logo {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+
+div.logo img {
+  width: 100%;
+  height: auto;
 }
 
 .formLogin {
-  padding: 4rem 7.4rem 19.4rem 4rem;
-}
-
-@media (max-width: 375px) {
-  .formLogin {
-    padding: 4rem 2rem 31rem;
-  }
-}
-
-.formLogin .logo {
-  margin-bottom: 12.6rem;
-}
-
-@media (max-width: 375px) {
-  .formLogin .logo {
-    margin-bottom: 3rem;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .formLogin .formContainer {
@@ -143,13 +143,13 @@ body {
 
 .formLogin .email input,
 .formLogin .password input {
-  max-width: 33.5rem;
-  height: 4.4rem;
+  width: 100%;
   border: 1px solid var(--input-without-active);
   border-radius: 4px;
   background-color: var(--form-background);
-  padding-left: 1.2rem;
-  padding-right: 1.2rem;
+  padding: 12px ;
+
+  color: var(--text-base);
 }
 
 .formLogin .email input::placeholder {
@@ -179,70 +179,19 @@ body {
   padding-left: 2.5rem;
 }
 
-/*======================FOCUS/BLUR - EMAIL/PASSWORD=============================*/
-.formLogin .email .activeEmail {
-  position: relative;
-
-  outline: none;
-  border: 1px solid var(--primary-color);
-  box-shadow: 0px 0px 0px 2px var(--box-shadow-color);
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 1.4rem;
-  line-height: 1.6rem;
-
-  color: var(--remind-color);
-}
-
-.formLogin .email .activeEmail {
-  max-width: 33.5rem;
-  height: 4.4rem;
-  border-radius: 4px;
-  background-color: var(--form-background);
-  padding-left: 1.2rem;
-  padding-right: 1.2rem;
-}
-
 .formLogin .email .activeEmail::placeholder {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 1.4rem;
-  line-height: 1.6rem;
-
-  color: var(--remind-color);
-
   background: url('../assets/mail-focus.svg') left center no-repeat;
   padding-left: 2.5rem;
 }
 
-.formLogin .password .activedPassword {
-  position: relative;
-  outline: none;
-  border: 1px solid var(--primary-color);
-  box-shadow: 0px 0px 0px 2px var(--box-shadow-color);
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 1.4rem;
-  line-height: 1.6rem;
-
-  color: var(--remind-color);
+.formLogin .password .activedPassword::placeholder {
+  background: url('../assets/lock-focus.svg') left center no-repeat;
 }
 
-.formLogin .password .activedPassword::placeholder {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 1.4rem;
-  line-height: 1.6rem;
-
-  color: var(--remind-color);
-
-  background: url('../assets/lock-focus.svg') left center no-repeat;
-  padding-left: 2.5rem;
-  z-index: 10;
+.formLogin .password input:focus,
+.formLogin .email input:focus {
+  border: 1px solid var(--primary-color);
+  outline: 2px solid var(--box-shadow-color);;
 }
 
 /*==================PASSWORD EYE=============================================*/
@@ -296,6 +245,7 @@ input[type='checkbox'] {
   cursor: pointer;
   width: 2rem;
   height: 2rem;
+  border-radius: 4px;
 }
 
 input[type='checkbox']:before {
@@ -389,14 +339,8 @@ input[type='checkbox']:checked:after {
 }
 
 .imgCar img {
-  width: 72rem;
-  height: 90rem;
-}
-
-@media (max-width: 375px) {
-  .imgCar img {
-    display: none;
-  }
+  width: 100%;
+  height: 100vh;
 }
 
 .formLogin .checkbox div {
